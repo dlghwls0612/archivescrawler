@@ -1,7 +1,7 @@
 window.INITIAL_JOBS_DATA = {
   "meta": {
     "project": "서울·경기 기록관리 채용 레이더 (Records Job Radar)",
-    "collected_at": "2026-10-21 15:14",
+    "collected_at": "2026-10-21 20:36",
     "job_count": 7,
     "stats": {
       "by_source": {
@@ -37,7 +37,7 @@ window.INITIAL_JOBS_DATA = {
       "status": "접수중",
       "dday": "D-2",
       "badge_color": "badge-danger",
-      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55176738&location=ts&searchword=%EA%B8%B0%EB%A1%9D%EB%AC%BC%EA%B4%80%EB%A6%AC&searchType=search&paid_fl=n&search_uuid=37353688-4972-446c-9929-15f49854e029"
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55176738&location=ts&searchword=%EA%B8%B0%EB%A1%9D%EB%AC%BC%EA%B4%80%EB%A6%AC&searchType=search&paid_fl=n&search_uuid=c7349010-98a5-4243-8280-17e841450ecc"
     },
     {
       "id": "saramin-55308234",
@@ -54,7 +54,7 @@ window.INITIAL_JOBS_DATA = {
       "status": "접수중",
       "dday": "D-25",
       "badge_color": "badge-success",
-      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55308234&location=ts&searchword=%EA%B8%B0%EB%A1%9D%EB%AC%BC%EA%B4%80%EB%A6%AC&searchType=search&paid_fl=n&search_uuid=37353688-4972-446c-9929-15f49854e029"
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55308234&location=ts&searchword=%EA%B8%B0%EB%A1%9D%EB%AC%BC%EA%B4%80%EB%A6%AC&searchType=search&paid_fl=n&search_uuid=c7349010-98a5-4243-8280-17e841450ecc"
     },
     {
       "id": "saramin-55109275",
@@ -71,7 +71,7 @@ window.INITIAL_JOBS_DATA = {
       "status": "접수중",
       "dday": "D-32",
       "badge_color": "badge-success",
-      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55109275&location=ts&searchword=%EA%B8%B0%EB%A1%9D%EB%AC%BC%EA%B4%80%EB%A6%AC&searchType=search&paid_fl=n&search_uuid=37353688-4972-446c-9929-15f49854e029"
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55109275&location=ts&searchword=%EA%B8%B0%EB%A1%9D%EB%AC%BC%EA%B4%80%EB%A6%AC&searchType=search&paid_fl=n&search_uuid=c7349010-98a5-4243-8280-17e841450ecc"
     },
     {
       "id": "saramin-55330786",
@@ -88,7 +88,7 @@ window.INITIAL_JOBS_DATA = {
       "status": "접수예정",
       "dday": "접수예정",
       "badge_color": "badge-warning",
-      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55330786&location=ts&searchword=%EA%B8%B0%EB%A1%9D%EB%AC%BC%EA%B4%80%EB%A6%AC&searchType=search&paid_fl=n&search_uuid=37353688-4972-446c-9929-15f49854e029"
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55330786&location=ts&searchword=%EA%B8%B0%EB%A1%9D%EB%AC%BC%EA%B4%80%EB%A6%AC&searchType=search&paid_fl=n&search_uuid=c7349010-98a5-4243-8280-17e841450ecc"
     },
     {
       "id": "saramin-55327943",
@@ -105,7 +105,7 @@ window.INITIAL_JOBS_DATA = {
       "status": "진행중",
       "dday": "접수중",
       "badge_color": "badge-info",
-      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55327943&location=ts&searchword=%EA%B8%B0%EB%A1%9D%EB%AC%BC%EA%B4%80%EB%A6%AC&searchType=search&paid_fl=n&search_uuid=37353688-4972-446c-9929-15f49854e029"
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55327943&location=ts&searchword=%EA%B8%B0%EB%A1%9D%EB%AC%BC%EA%B4%80%EB%A6%AC&searchType=search&paid_fl=n&search_uuid=c7349010-98a5-4243-8280-17e841450ecc"
     },
     {
       "id": "karma-2210",
