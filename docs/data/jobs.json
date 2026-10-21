@@ -1,7 +1,7 @@
 {
   "meta": {
     "project": "서울·경기 기록관리 채용 레이더 (Records Job Radar)",
-    "collected_at": "2026-10-21 20:36",
+    "collected_at": "2026-10-22 05:15",
     "job_count": 7,
     "stats": {
       "by_source": {
@@ -23,23 +23,6 @@
   },
   "jobs": [
     {
-      "id": "saramin-55176738",
-      "source": "사람인",
-      "category": "문화재단·공공·민간",
-      "title": "디지털 아카이브 사업 담당자(팀장급) 채용",
-      "organization": "(주)다하미커뮤니케이션즈",
-      "region": "서울",
-      "location": "서울",
-      "jobtype": "정규",
-      "is_specialist": false,
-      "start_date": null,
-      "deadline": "2026-10-23",
-      "status": "접수중",
-      "dday": "D-2",
-      "badge_color": "badge-danger",
-      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55176738&location=ts&searchword=%EA%B8%B0%EB%A1%9D%EB%AC%BC%EA%B4%80%EB%A6%AC&searchType=search&paid_fl=n&search_uuid=c7349010-98a5-4243-8280-17e841450ecc"
-    },
-    {
       "id": "saramin-55308234",
       "source": "사람인",
       "category": "문화재단·공공·민간",
@@ -52,9 +35,9 @@
       "start_date": null,
       "deadline": "2026-11-15",
       "status": "접수중",
-      "dday": "D-25",
+      "dday": "D-24",
       "badge_color": "badge-success",
-      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55308234&location=ts&searchword=%EA%B8%B0%EB%A1%9D%EB%AC%BC%EA%B4%80%EB%A6%AC&searchType=search&paid_fl=n&search_uuid=c7349010-98a5-4243-8280-17e841450ecc"
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55308234&location=ts&searchword=%EA%B8%B0%EB%A1%9D%EB%AC%BC%EA%B4%80%EB%A6%AC&searchType=search&paid_fl=n&search_uuid=3f8541c6-5c76-4a87-891d-4bd9a60a7cde"
     },
     {
       "id": "saramin-55109275",
@@ -69,9 +52,9 @@
       "start_date": null,
       "deadline": "2026-11-22",
       "status": "접수중",
-      "dday": "D-32",
+      "dday": "D-31",
       "badge_color": "badge-success",
-      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55109275&location=ts&searchword=%EA%B8%B0%EB%A1%9D%EB%AC%BC%EA%B4%80%EB%A6%AC&searchType=search&paid_fl=n&search_uuid=c7349010-98a5-4243-8280-17e841450ecc"
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55109275&location=ts&searchword=%EA%B8%B0%EB%A1%9D%EB%AC%BC%EA%B4%80%EB%A6%AC&searchType=search&paid_fl=n&search_uuid=3f8541c6-5c76-4a87-891d-4bd9a60a7cde"
     },
     {
       "id": "saramin-55330786",
@@ -88,7 +71,7 @@
       "status": "접수예정",
       "dday": "접수예정",
       "badge_color": "badge-warning",
-      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55330786&location=ts&searchword=%EA%B8%B0%EB%A1%9D%EB%AC%BC%EA%B4%80%EB%A6%AC&searchType=search&paid_fl=n&search_uuid=c7349010-98a5-4243-8280-17e841450ecc"
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55330786&location=ts&searchword=%EA%B8%B0%EB%A1%9D%EB%AC%BC%EA%B4%80%EB%A6%AC&searchType=search&paid_fl=n&search_uuid=3f8541c6-5c76-4a87-891d-4bd9a60a7cde"
     },
     {
       "id": "saramin-55327943",
@@ -105,7 +88,24 @@
       "status": "진행중",
       "dday": "접수중",
       "badge_color": "badge-info",
-      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55327943&location=ts&searchword=%EA%B8%B0%EB%A1%9D%EB%AC%BC%EA%B4%80%EB%A6%AC&searchType=search&paid_fl=n&search_uuid=c7349010-98a5-4243-8280-17e841450ecc"
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55327943&location=ts&searchword=%EA%B8%B0%EB%A1%9D%EB%AC%BC%EA%B4%80%EB%A6%AC&searchType=search&paid_fl=n&search_uuid=3f8541c6-5c76-4a87-891d-4bd9a60a7cde"
+    },
+    {
+      "id": "saramin-55176738",
+      "source": "사람인",
+      "category": "문화재단·공공·민간",
+      "title": "디지털 아카이브 사업 담당자(팀장급) 채용",
+      "organization": "(주)다하미커뮤니케이션즈",
+      "region": "서울",
+      "location": "서울",
+      "jobtype": "정규",
+      "is_specialist": false,
+      "start_date": null,
+      "deadline": null,
+      "status": "진행중",
+      "dday": "접수중",
+      "badge_color": "badge-info",
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55176738&location=ts&searchword=%EA%B8%B0%EB%A1%9D%EB%AC%BC%EA%B4%80%EB%A6%AC&searchType=search&paid_fl=n&search_uuid=3f8541c6-5c76-4a87-891d-4bd9a60a7cde"
     },
     {
       "id": "karma-2210",
