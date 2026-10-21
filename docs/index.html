@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>서울·경기 기록관리 채용 레이더 | Records Job Radar</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="header-top">
+        <div class="title-area">
+          <h1>
+            기록관리 채용 레이더
+            <span class="badge-scope">서울 · 경기 전용</span>
+          </h1>
+          <p>기록연구사 · 기록물관리전문요원 · 아키비스트 채용공고 실시간 통합 수집</p>
+        </div>
+        <div class="meta-info">
+          <div>최근 업데이트: <strong id="collected-at">-</strong></div>
+          <div>수집 출처: <strong>KARMA · 잡알리오 · 사람인</strong></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Stat Banner -->
+    <section class="stat-banner">
+      <div class="stat-card">
+        <span class="stat-label">전체 유효 공고</span>
+        <span class="stat-value highlight" id="stat-total">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">서울 지역</span>
+        <span class="stat-value" id="stat-seoul">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">경기 지역</span>
+        <span class="stat-value" id="stat-gyeonggi">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">전문요원 필수</span>
+        <span class="stat-value highlight" id="stat-specialist">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">마감 임박 (D-3 이내)</span>
+        <span class="stat-value urgent" id="stat-urgent">0</span>
+      </div>
+    </section>
+
+    <!-- Controls Card -->
+    <section class="controls-card">
+      <!-- 1st Row: Region & Category Tabs -->
+      <div class="filter-row">
+        <div class="tabs-group" id="region-tabs">
+          <button class="tab-btn active" data-region="all">전체 지역</button>
+          <button class="tab-btn" data-region="서울">서울</button>
+          <button class="tab-btn" data-region="경기">경기</button>
+        </div>
+
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <label class="toggle-filter">
+            <input type="checkbox" id="filter-specialist">
+            <span>기록물관리전문요원 필수만</span>
+          </label>
+          <label class="toggle-filter" style="background: #f1f5f9; border-color: #cbd5e1;">
+            <input type="checkbox" id="filter-include-closed">
+            <span>마감된 공고 포함</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- 2nd Row: Search and Sort -->
+      <div class="search-sort-row">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="search-input" placeholder="기관명, 공고 제목, 키워드 검색...">
+        </div>
+        <select class="sort-select" id="sort-select">
+          <option value="dday-asc">마감임박순 (D-Day)</option>
+          <option value="deadline-desc">마감일 늦은순</option>
+          <option value="title-asc">공고 제목순</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Job Cards Grid -->
+    <main class="job-grid" id="job-grid">
+      <div class="empty-state">
+        <h3>공고 데이터를 불러오는 중입니다...</h3>
+      </div>
+    </main>
+  </div>
+
+  <script src="data/jobs.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
