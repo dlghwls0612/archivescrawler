@@ -9,7 +9,7 @@
 
 ## 2. 디렉터리 구조
 ```
-recordscrawler/
+archivescrawler/
 ├─ sources.yaml          # 수집 설정, 직무 키워드 및 필터 규칙
 ├─ requirements.txt      # 의존성 라이브러리
 ├─ crawler/
@@ -24,7 +24,8 @@ recordscrawler/
 │  ├─ css/style.css      # 모던 UI 스타일시트
 │  ├─ js/app.js          # 실시간 필터링/검색/정렬 클라이언트 스크립트
 │  └─ data/
-│     └─ jobs.json       # 실시간 수집 결과 데이터
+│     ├─ jobs.json       # 실시간 수집 결과 데이터
+│     └─ jobs.js         # 로컬 file:// 열람 지원용 스크립트
 └─ README.md
 ```
 
