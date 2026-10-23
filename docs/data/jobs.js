@@ -1,20 +1,20 @@
 window.INITIAL_JOBS_DATA = {
   "meta": {
     "project": "서울·경기 기록관리 채용 레이더 (Records Job Radar)",
-    "collected_at": "2026-10-23 05:15",
-    "job_count": 7,
+    "collected_at": "2026-10-24 05:15",
+    "job_count": 6,
     "stats": {
       "by_source": {
-        "사람인": 5,
+        "사람인": 4,
         "한국기록전문가협회": 1,
         "잡알리오": 1
       },
       "by_region": {
-        "서울": 7,
+        "서울": 6,
         "경기": 0
       },
       "by_jobtype": {
-        "정규": 4,
+        "정규": 3,
         "계약": 2,
         "임기제": 1
       },
@@ -22,23 +22,6 @@ window.INITIAL_JOBS_DATA = {
     }
   },
   "jobs": [
-    {
-      "id": "saramin-55176738",
-      "source": "사람인",
-      "category": "문화재단·공공·민간",
-      "title": "디지털 아카이브 사업 담당자(팀장급) 채용",
-      "organization": "(주)다하미커뮤니케이션즈",
-      "region": "서울",
-      "location": "서울",
-      "jobtype": "정규",
-      "is_specialist": false,
-      "start_date": null,
-      "deadline": "2026-10-23",
-      "status": "오늘마감",
-      "dday": "D-Day",
-      "badge_color": "badge-danger",
-      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55176738&location=ts&searchword=%EA%B8%B0%EB%A1%9D%EB%AC%BC%EA%B4%80%EB%A6%AC&searchType=search&paid_fl=n&search_uuid=3621b68f-095f-402c-bdca-4a7250f7b1ab"
-    },
     {
       "id": "saramin-55308234",
       "source": "사람인",
@@ -52,9 +35,9 @@ window.INITIAL_JOBS_DATA = {
       "start_date": null,
       "deadline": "2026-11-15",
       "status": "접수중",
-      "dday": "D-23",
+      "dday": "D-22",
       "badge_color": "badge-success",
-      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55308234&location=ts&searchword=%EA%B8%B0%EB%A1%9D%EB%AC%BC%EA%B4%80%EB%A6%AC&searchType=search&paid_fl=n&search_uuid=3621b68f-095f-402c-bdca-4a7250f7b1ab"
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55308234&location=ts&searchword=%EA%B8%B0%EB%A1%9D%EB%AC%BC%EA%B4%80%EB%A6%AC&searchType=search&paid_fl=n&search_uuid=e88c5371-b7a4-4960-a1cb-a603ef036fc5"
     },
     {
       "id": "saramin-55109275",
@@ -69,9 +52,9 @@ window.INITIAL_JOBS_DATA = {
       "start_date": null,
       "deadline": "2026-11-22",
       "status": "접수중",
-      "dday": "D-30",
+      "dday": "D-29",
       "badge_color": "badge-success",
-      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55109275&location=ts&searchword=%EA%B8%B0%EB%A1%9D%EB%AC%BC%EA%B4%80%EB%A6%AC&searchType=search&paid_fl=n&search_uuid=3621b68f-095f-402c-bdca-4a7250f7b1ab"
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55109275&location=ts&searchword=%EA%B8%B0%EB%A1%9D%EB%AC%BC%EA%B4%80%EB%A6%AC&searchType=search&paid_fl=n&search_uuid=e88c5371-b7a4-4960-a1cb-a603ef036fc5"
     },
     {
       "id": "saramin-55330786",
@@ -88,7 +71,7 @@ window.INITIAL_JOBS_DATA = {
       "status": "접수예정",
       "dday": "접수예정",
       "badge_color": "badge-warning",
-      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55330786&location=ts&searchword=%EA%B8%B0%EB%A1%9D%EB%AC%BC%EA%B4%80%EB%A6%AC&searchType=search&paid_fl=n&search_uuid=3621b68f-095f-402c-bdca-4a7250f7b1ab"
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55330786&location=ts&searchword=%EA%B8%B0%EB%A1%9D%EB%AC%BC%EA%B4%80%EB%A6%AC&searchType=search&paid_fl=n&search_uuid=e88c5371-b7a4-4960-a1cb-a603ef036fc5"
     },
     {
       "id": "saramin-55327943",
@@ -105,7 +88,7 @@ window.INITIAL_JOBS_DATA = {
       "status": "진행중",
       "dday": "접수중",
       "badge_color": "badge-info",
-      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55327943&location=ts&searchword=%EA%B8%B0%EB%A1%9D%EB%AC%BC%EA%B4%80%EB%A6%AC&searchType=search&paid_fl=n&search_uuid=3621b68f-095f-402c-bdca-4a7250f7b1ab"
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=55327943&location=ts&searchword=%EA%B8%B0%EB%A1%9D%EB%AC%BC%EA%B4%80%EB%A6%AC&searchType=search&paid_fl=n&search_uuid=e88c5371-b7a4-4960-a1cb-a603ef036fc5"
     },
     {
       "id": "karma-2210",
