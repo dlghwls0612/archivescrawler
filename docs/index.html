@@ -1,105 +1,223 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>서울·경기 기록관리 채용 레이더 | Records Job Radar</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="alternate icon" href="favicon.ico">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>서울·경기 기록관리 채용공고</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="alternate icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<style>
+  /* 디자인은 librarycrawler/docs/index.html 과 같은 토큰·구성을 쓴다 (두 사이트 통일) */
+  :root{
+    --ground:#FBFCFC; --surface:#FFFFFF; --surface-2:#F3F7F5;
+    --ink:#16211F; --muted:#586964; --faint:#8B9995;
+    --border:#E4EAE8; --border-strong:#CFD9D5;
+    --accent:#0E7C6B; --accent-ink:#0A5A4E; --accent-soft:#DCEEE9; --on-accent:#FFFFFF;
+    --new:#D6453B; --new-soft:#FBE4E2;
+    --shadow:0 1px 2px rgba(20,40,36,.05),0 6px 22px rgba(20,40,36,.06);
+    --radius:14px;
+    --font:"Pretendard Variable","Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,-apple-system,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){:root{
+    --ground:#0E1413; --surface:#141C1A; --surface-2:#18211F; --ink:#E9EFED; --muted:#9EABA7; --faint:#6E7C78;
+    --border:#25302D; --border-strong:#33423C; --accent:#3FBEA6; --accent-ink:#8FE0D1; --accent-soft:#173029; --on-accent:#08110F;
+    --new:#F0766B; --new-soft:#2E1A18; --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 22px rgba(0,0,0,.35);}}
+  :root[data-theme="dark"]{
+    --ground:#0E1413; --surface:#141C1A; --surface-2:#18211F; --ink:#E9EFED; --muted:#9EABA7; --faint:#6E7C78;
+    --border:#25302D; --border-strong:#33423C; --accent:#3FBEA6; --accent-ink:#8FE0D1; --accent-soft:#173029; --on-accent:#08110F;
+    --new:#F0766B; --new-soft:#2E1A18;}
+  :root[data-theme="light"]{
+    --ground:#FBFCFC; --surface:#FFFFFF; --surface-2:#F3F7F5; --ink:#16211F; --muted:#586964; --faint:#8B9995;
+    --border:#E4EAE8; --border-strong:#CFD9D5; --accent:#0E7C6B; --accent-ink:#0A5A4E; --accent-soft:#DCEEE9; --on-accent:#FFFFFF;
+    --new:#D6453B; --new-soft:#FBE4E2;}
+  *{box-sizing:border-box} body{margin:0}
+  .wrap{font-family:var(--font);background:var(--ground);color:var(--ink);min-height:100vh;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .container{max-width:1000px;margin:0 auto;padding:0 20px}
+  header.site{border-bottom:1px solid var(--border);background:var(--surface)}
+  header.site .container{padding:24px 20px 20px}
+  .mark{font-size:1.4rem;font-weight:800;letter-spacing:-.02em;margin:0}
+  .mark .dot{color:var(--accent)}
+  .tagline{color:var(--muted);font-size:.92rem;margin:8px 0 0}
+  .tagline a{color:var(--accent-ink);font-weight:700}
+  .counts{margin-top:12px;font-size:.82rem;color:var(--faint)}
+  .counts b{color:var(--ink);font-weight:700;font-variant-numeric:tabular-nums}
+  .controls{position:sticky;top:0;z-index:20;background:var(--ground);border-bottom:1px solid var(--border)}
+  .controls .container{padding:13px 20px;display:flex;flex-direction:column;gap:12px}
+  .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .label{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);font-weight:700;min-width:44px}
+  .seg{display:inline-flex;background:var(--surface-2);border:1px solid var(--border);border-radius:999px;padding:4px;gap:4px}
+  .seg button{border:0;background:transparent;color:var(--muted);font-family:inherit;font-size:1rem;font-weight:700;padding:8px 22px;border-radius:999px;cursor:pointer;transition:all .15s}
+  .seg button:hover{color:var(--ink)}
+  .seg button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)}
+  .chips{display:flex;gap:7px;flex-wrap:wrap}
+  .chip{border:1px solid var(--border-strong);background:var(--surface);color:var(--ink);font-family:inherit;font-size:.84rem;font-weight:600;padding:5px 12px;border-radius:999px;cursor:pointer;transition:all .13s}
+  .chip:hover{border-color:var(--accent);color:var(--accent-ink)}
+  .chip[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent-ink)}
+  .toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .search{flex:1;min-width:170px;display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border-strong);border-radius:10px;padding:7px 12px}
+  .search input{border:0;background:transparent;color:var(--ink);font-family:inherit;font-size:.9rem;width:100%;outline:none}
+  .search svg{flex:none;color:var(--faint)}
+  .sortsel{font-family:inherit;font-size:.82rem;color:var(--ink);background:var(--surface);border:1px solid var(--border-strong);border-radius:8px;padding:6px 10px}
+  .result-line{font-size:.82rem;color:var(--muted);font-variant-numeric:tabular-nums}
+  main{padding:18px 0 60px}
+  .list{display:flex;flex-direction:column;gap:11px}
+  .job{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:15px 17px;display:flex;flex-direction:column;gap:9px;box-shadow:var(--shadow);transition:all .13s}
+  .job:hover{border-color:var(--border-strong);transform:translateY(-1px)}
+  .job.closed{opacity:.55}
+  .job h3{margin:0;font-size:1.02rem;font-weight:700;letter-spacing:-.01em;line-height:1.4;text-wrap:balance}
+  .job-meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:.82rem;color:var(--muted)}
+  .src{font-weight:700;color:var(--ink)} .dist{color:var(--accent-ink);font-weight:600} .dot-sep{color:var(--faint)}
+  .jt{font-size:.71rem;font-weight:700;padding:2px 8px;border-radius:999px;border:1px solid transparent}
+  .jt.정규{color:#0A5A4E;background:#DCEEE9;border-color:#B9DED5}
+  .jt.계약{color:#8A5A00;background:#FBEFD6;border-color:#EAD9AE}
+  .jt.알바{color:#7A3E86;background:#F1E4F3;border-color:#E0CBE3}
+  .jt.임기제{color:#2F4F9E;background:#E2E9F8;border-color:#C5D2EE}
+  .jt.spec{color:var(--accent-ink);background:transparent;border-color:var(--accent)}
+  @media (prefers-color-scheme:dark){.jt.정규{color:#8FE0D1;background:#173029;border-color:#245046}.jt.계약{color:#E8C77E;background:#2A2210;border-color:#463A1C}.jt.알바{color:#DDA9E4;background:#291A2C;border-color:#452C49}.jt.임기제{color:#A9BEF0;background:#1A2238;border-color:#2C3A5E}}
+  :root[data-theme="dark"] .jt.정규{color:#8FE0D1;background:#173029}
+  :root[data-theme="dark"] .jt.계약{color:#E8C77E;background:#2A2210}
+  :root[data-theme="dark"] .jt.알바{color:#DDA9E4;background:#291A2C}
+  :root[data-theme="dark"] .jt.임기제{color:#A9BEF0;background:#1A2238}
+  .job-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .dates{font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums}
+  .dates .dl{color:var(--new);font-weight:700}
+  .dates .dl.imminent{background:var(--new-soft);padding:1px 7px;border-radius:6px;font-weight:800}
+  .dates .dl.upcoming{color:#0A5A4E;background:#DCEEE9;padding:1px 7px;border-radius:6px;font-weight:800}
+  .dates .dl.closed{color:var(--faint);font-weight:700}
+  @media (prefers-color-scheme:dark){.dates .dl.upcoming{color:#8FE0D1;background:#173029}}
+  :root[data-theme="dark"] .dates .dl.upcoming{color:#8FE0D1;background:#173029}
+  .cta{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:var(--on-accent);text-decoration:none;font-weight:750;font-size:.86rem;padding:8px 14px;border-radius:9px;transition:background .13s;white-space:nowrap}
+  .cta:hover{background:var(--accent-ink)}
+  .empty{text-align:center;color:var(--muted);padding:48px 20px}
+  footer{border-top:1px solid var(--border);background:var(--surface);color:var(--muted);font-size:.82rem;line-height:1.7}
+  footer .container{padding:22px 20px 40px}
+  footer h4{color:var(--ink);font-size:.86rem;margin:0 0 8px}
+  .disc{color:var(--faint);font-size:.78rem;border-top:1px dashed var(--border);padding-top:14px;margin-top:12px}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
 </head>
 <body>
-  <div class="container">
-    <!-- Header -->
-    <header>
-      <div class="header-top">
-        <div class="title-area">
-          <h1>
-            기록관리 채용 레이더
-            <span class="badge-scope">서울 · 경기 전용</span>
-          </h1>
-          <p>기록연구사 · 기록물관리전문요원 · 아키비스트 채용공고 실시간 통합 수집</p>
-        </div>
-        <div class="meta-info">
-          <div>최근 업데이트: <strong id="collected-at">-</strong></div>
-          <div>수집 출처: <strong>KARMA · 잡알리오 · 사람인</strong></div>
-        </div>
-      </div>
-    </header>
-
-    <!-- Stat Banner -->
-    <section class="stat-banner">
-      <div class="stat-card">
-        <span class="stat-label">전체 유효 공고</span>
-        <span class="stat-value highlight" id="stat-total">0</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-label">서울 지역</span>
-        <span class="stat-value" id="stat-seoul">0</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-label">경기 지역</span>
-        <span class="stat-value" id="stat-gyeonggi">0</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-label">전문요원 필수</span>
-        <span class="stat-value highlight" id="stat-specialist">0</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-label">마감 임박 (D-3 이내)</span>
-        <span class="stat-value urgent" id="stat-urgent">0</span>
-      </div>
-    </section>
-
-    <!-- Controls Card -->
-    <section class="controls-card">
-      <!-- 1st Row: Region & Category Tabs -->
-      <div class="filter-row">
-        <div class="tabs-group" id="region-tabs">
-          <button class="tab-btn active" data-region="all">전체 지역</button>
-          <button class="tab-btn" data-region="서울">서울</button>
-          <button class="tab-btn" data-region="경기">경기</button>
-        </div>
-
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-          <label class="toggle-filter">
-            <input type="checkbox" id="filter-specialist">
-            <span>기록물관리전문요원 필수만</span>
-          </label>
-          <label class="toggle-filter" style="background: #f1f5f9; border-color: #cbd5e1;">
-            <input type="checkbox" id="filter-include-closed">
-            <span>마감된 공고 포함</span>
-          </label>
+<div class="wrap">
+  <header class="site">
+    <div class="container">
+      <h1 class="mark">서울·경기 기록관리 <span class="dot">채용공고</span></h1>
+      <p class="tagline">기록연구사·기록물관리전문요원·아키비스트 공고를 매일 모아 보여줍니다. 도서관 공고는 <a href="https://dlghwls0612.github.io/librarycrawler/">도서관 채용공고</a>에서 (그곳의 '기록관리' 탭에도 같은 목록이 있어요).</p>
+      <div class="counts" id="counts"></div>
+    </div>
+  </header>
+  <div class="controls">
+    <div class="container">
+      <div class="row" role="group" aria-label="지역 선택">
+        <span class="label">지역</span>
+        <div class="seg" id="regionSeg">
+          <button type="button" data-region="전체" aria-pressed="true">전체</button>
+          <button type="button" data-region="서울" aria-pressed="false">서울</button>
+          <button type="button" data-region="경기" aria-pressed="false">경기</button>
         </div>
       </div>
-
-      <!-- 2nd Row: Search and Sort -->
-      <div class="search-sort-row">
-        <div class="search-box">
-          <span class="search-icon">🔍</span>
-          <input type="text" id="search-input" placeholder="기관명, 공고 제목, 키워드 검색...">
+      <div class="row" role="group" aria-label="조건"><span class="label">조건</span><div class="chips" id="optChips">
+        <button type="button" class="chip" id="chipSpec" aria-pressed="false">전문요원 필수만</button>
+        <button type="button" class="chip" id="chipClosed" aria-pressed="false">마감 공고 포함</button>
+      </div></div>
+      <div class="toolbar">
+        <div class="search" role="search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          <input id="q" type="search" placeholder="공고·기관 검색 (예: 기록연구사, 서울기록원)" aria-label="검색">
         </div>
-        <select class="sort-select" id="sort-select">
-          <option value="dday-asc">마감임박순 (D-Day)</option>
-          <option value="deadline-desc">마감일 늦은순</option>
-          <option value="title-asc">공고 제목순</option>
-        </select>
+        <div class="row" style="gap:10px">
+          <select class="sortsel" id="sort"><option value="deadline">마감 임박순</option><option value="title">공고 제목순</option></select>
+          <span class="result-line" id="resultLine"></span>
+        </div>
       </div>
-    </section>
-
-    <!-- Job Cards Grid -->
-    <main class="job-grid" id="job-grid">
-      <div class="empty-state">
-        <h3>공고 데이터를 불러오는 중입니다...</h3>
-      </div>
-    </main>
+    </div>
   </div>
+  <main><div class="container"><div class="list" id="list"></div><div class="empty" id="empty" hidden></div></div></main>
+  <footer><div class="container">
+    <h4>안내</h4>
+    한국기록전문가협회(KARMA)·잡알리오·사람인에서 서울·경기 기록관리 채용공고를 모아 이 목록을 갱신합니다. 공고를 누르면 원문으로 바로 이동해요.
+    <p class="disc" id="disc"></p>
+  </div></footer>
+</div>
 
-  <script src="data/jobs.js"></script>
-  <script src="js/app.js"></script>
+<script src="data/jobs.js"></script>
+<script>
+var JOBS = [], META = {};
+var state = {region:"전체", spec:false, closed:false, q:"", sort:"deadline"};
+var ORDER = {"오늘마감":0, "접수중":1, "접수예정":2, "진행중":3, "마감":4};
+
+function todayMs(){var d=new Date();return new Date(d.getFullYear(),d.getMonth(),d.getDate()).getTime();}
+function ms(s){if(!s)return null;var p=s.split("-");return new Date(+p[0],+p[1]-1,+p[2]).getTime();}
+// 수집 시점의 status 를 그대로 믿지 않고, 마감일이 지났으면 오늘 기준으로 마감 처리
+function isClosed(j){if(j.status==="마감")return true;var t=ms(j.deadline);return t!==null&&t<todayMs();}
+function daysLeft(j){var t=ms(j.deadline);if(t===null)return null;return Math.round((t-todayMs())/864e5);}
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+function fmt(s){if(!s)return null;var p=s.split("-");return p[1]+"."+p[2];}
+
+var grid=document.getElementById("list"),empty=document.getElementById("empty");
+var resultLine=document.getElementById("resultLine"),qIn=document.getElementById("q"),sortSel=document.getElementById("sort");
+
+function matches(j){
+  if(!state.closed&&isClosed(j))return false;
+  if(state.region!=="전체"&&j.region!==state.region)return false;
+  if(state.spec&&!j.is_specialist)return false;
+  if(state.q){var h=(j.title+" "+j.organization+" "+j.source+" "+(j.location||"")).toLowerCase();if(h.indexOf(state.q.toLowerCase())<0)return false;}
+  return true;
+}
+function render(){
+  var items=JOBS.filter(matches);
+  items.sort(function(a,b){
+    if(state.sort==="title")return a.title.localeCompare(b.title,"ko");
+    var ca=isClosed(a),cb=isClosed(b);if(ca!==cb)return ca?1:-1;
+    var oa=ORDER[a.status],ob=ORDER[b.status];oa=oa==null?3:oa;ob=ob==null?3:ob;if(oa!==ob)return oa-ob;
+    return (ms(a.deadline)||8e15)-(ms(b.deadline)||8e15);
+  });
+  grid.innerHTML="";
+  empty.hidden=items.length>0;
+  if(!items.length)empty.textContent="조건에 맞는 공고가 없어요. 조건을 바꾸거나 '마감 공고 포함'을 눌러 보세요.";
+  resultLine.textContent=state.region+" · "+items.length+"건";
+  items.forEach(function(j){
+    var el=document.createElement("article");var closed=isClosed(j);el.className="job"+(closed?" closed":"");
+    var dl=daysLeft(j),dlSpan="";
+    if(closed)dlSpan='<span class="dl closed">마감</span>';
+    else if(j.status==="접수예정")dlSpan='<span class="dl upcoming">접수예정</span>';
+    else if(dl!==null)dlSpan='<span class="dl'+(dl<=3?" imminent":"")+'">'+(dl===0?"오늘 마감":"D-"+dl)+'</span>';
+    var datePart=(j.start_date?("접수 "+fmt(j.start_date)+" · "):"")+"마감 "+(j.deadline?fmt(j.deadline):"공고문 확인")+(dlSpan?" "+dlSpan:"");
+    el.innerHTML=
+      '<h3>'+esc(j.title)+'</h3>'+
+      '<div class="job-meta"><span class="src">'+esc(j.organization||j.source)+'</span><span class="dot-sep">·</span><span class="dist">'+esc(j.region||"지역 미상")+'</span>'+
+      '<span class="jt '+esc(j.jobtype)+'">'+esc(j.jobtype||"계약")+'</span>'+(j.is_specialist?'<span class="jt spec">전문요원 필수</span>':'')+
+      '<span class="dot-sep">·</span><span>'+esc(j.source)+'</span></div>'+
+      '<div class="job-foot"><span class="dates">'+datePart+'</span>'+
+      '<a class="cta" href="'+esc(j.url)+'" target="_blank" rel="noopener">원문 보기<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>';
+    grid.appendChild(el);
+  });
+}
+function renderCounts(){
+  var o=JOBS.filter(function(j){return !isClosed(j);});
+  var spec=o.filter(function(j){return j.is_specialist;}).length;
+  var urgent=o.filter(function(j){var d=daysLeft(j);return d!==null&&d<=3;}).length;
+  document.getElementById("counts").innerHTML="현재 열린 공고 <b>"+o.length+"</b>건 · 전문요원 필수 <b>"+spec+"</b>건 · 마감 임박(3일 이내) <b style='color:var(--new)'>"+urgent+"</b>건 <span style='color:var(--faint)'>· "+esc(META.collected_at||"")+" 수집</span>";
+  document.getElementById("disc").innerHTML="수집 기준 "+esc(META.collected_at||"")+" · 마감된 공고는 기본으로 숨김 · '원문 보기'는 실제 공고로 연결.";
+}
+document.querySelectorAll("#regionSeg button").forEach(function(btn){
+  btn.addEventListener("click",function(){
+    state.region=btn.getAttribute("data-region");
+    document.querySelectorAll("#regionSeg button").forEach(function(b){b.setAttribute("aria-pressed",b===btn?"true":"false");});
+    render();});});
+function toggleChip(id,key){var b=document.getElementById(id);b.addEventListener("click",function(){state[key]=!state[key];b.setAttribute("aria-pressed",state[key]?"true":"false");render();});}
+toggleChip("chipSpec","spec");toggleChip("chipClosed","closed");
+qIn.addEventListener("input",function(){state.q=qIn.value.trim();render();});
+sortSel.addEventListener("change",function(){state.sort=sortSel.value;render();});
+
+function boot(data){JOBS=data.jobs||[];META=data.meta||{};renderCounts();render();}
+// 배포 시 data/jobs.json, 탐색기에서 바로 열면(file://) data/jobs.js 의 내장 사본
+fetch("data/jobs.json?t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();}).then(boot).catch(function(){
+  if(window.INITIAL_JOBS_DATA)boot(window.INITIAL_JOBS_DATA);
+  else{empty.hidden=false;empty.textContent="공고 데이터를 불러오지 못했어요. 잠시 후 새로고침해 보세요.";}
+});
+</script>
 </body>
 </html>
