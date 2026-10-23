@@ -1,10 +1,10 @@
 {
-  "name": "서울·경기 기록관리 채용 레이더",
+  "name": "기록관리 채용공고",
   "short_name": "기록관리",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#f8fafc",
-  "theme_color": "#1e3a8a",
+  "background_color": "#FBFCFC",
+  "theme_color": "#0E7C6B",
   "icons": [
     {
       "src": "apple-touch-icon.png",
